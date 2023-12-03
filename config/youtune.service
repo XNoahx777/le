@@ -1,0 +1,12 @@
+[Unit]
+Description=YouTune service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/youtune-reactnative
+ExecStartPre=git pull https://github.com/kvnp/youtune-reactnative main
+ExecStartPre=npm i
+ExecStart=npm start
+
+[Install]
+WantedBy=multi-user.target
